@@ -35,7 +35,7 @@ class Order(Mybaseclass,models.Model):
 
 class Order_items(Mybaseclass,models.Model):
 
-    order_details = models.ForeignKey(
+    order = models.ForeignKey(
         Order,
         on_delete=models.CASCADE,
     )
