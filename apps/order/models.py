@@ -50,7 +50,7 @@ class Order_items(Mybaseclass,models.Model):
     )
 
     class Meta:
-        db_table = "Orders"
+        db_table = "Orders_items"
 
     def __str__(self):
         return self.pk
