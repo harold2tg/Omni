@@ -17,7 +17,8 @@ class Payment(Mybaseclass, models.Model):
     )
 
     amount = models.DecimalField(
-        default=0
+        max_digits=15,
+        decimal_places=2
     )
 
     status = models.BooleanField(

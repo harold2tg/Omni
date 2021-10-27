@@ -6,8 +6,6 @@ from ..product.models import Product
 from ..otherUtilities.models import Mybaseclass
 # User
 from ..custom_user.models import User
-# Payments
-from ..payment.models import Payment
 
 
 class Order(Mybaseclass,models.Model):
@@ -20,7 +18,10 @@ class Order(Mybaseclass,models.Model):
         on_delete=models.CASCADE,
     )
 
-    total = models.DecimalField()
+    total = models.DecimalField(
+        max_digits=15,
+        decimal_places=2
+    )
 
     paid_out = models.BooleanField(
         default=False

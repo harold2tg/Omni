@@ -6,9 +6,16 @@ from ..otherUtilities.models import Mybaseclass
 
 
 class Product(Mybaseclass, models.Model):
-    name = models.CharField(max_length=150, unique=True)
-    price = models.DecimalField()
-    stock = models.PositiveSmall()
+    name = models.CharField(
+        max_length=150,
+        unique=True
+    )
+
+    price = models.DecimalField(
+        max_digits=15,
+        decimal_places=2
+    )
+    stock = models.PositiveSmallIntegerField()
     # is_active = models.BooleanField(default=True, blank=True)
 
     class Meta:
