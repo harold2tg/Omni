@@ -1,2 +1,8 @@
 .idea
 /env
+OmniApi/__pycache__/
+/apps/custom_user/migrations
+/apps/order/migrations
+/apps/payment/migrations
+/apps/product/migrations
+/apps/shipment/migrations
