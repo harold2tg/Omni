@@ -10,29 +10,24 @@ from ..custom_user.models import User
 from ..payment.models import Payment
 
 
-class Order_details(Mybaseclass,models.Model):
+class Order(Mybaseclass,models.Model):
     """The paid_out field will indicate if the order is fully paid.
     Only when the amount is equal to the total in the order detail is paid_out set to true
     """
 
-    user = models.OneToOneField(
+    user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
     )
 
     total = models.DecimalField()
 
-    payments = models.ForeignKey(
-        Payment,
-        on_delete=models.CASCADE,
-    )
-
     paid_out = models.BooleanField(
         default=False
     )
 
     class Meta:
-        db_table = "Order_details"
+        db_table = "Order"
 
     def __str__(self):
         return self.pk
@@ -41,7 +36,7 @@ class Order_details(Mybaseclass,models.Model):
 class Order_items(Mybaseclass,models.Model):
 
     order_details = models.ForeignKey(
-        Order_details,
+        Order,
         on_delete=models.CASCADE,
     )
 

@@ -5,14 +5,14 @@ from django.db import models
 from ..otherUtilities.models import Mybaseclass
 
 # Other order
-from ..order.models import Order_details
+from ..order.models import Order
 
 
 class Payment(Mybaseclass, models.Model):
     """The status field will indicate if the payment provider response is positive"""
 
     order = models.ForeignKey(
-        Order_details,
+        Order,
         on_delete=models.CASCADE,
     )
 

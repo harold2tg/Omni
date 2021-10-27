@@ -5,12 +5,12 @@ from django.db import models
 from ..otherUtilities.models import Mybaseclass
 
 # Other order
-from ..order.models import Order_details
+from ..order.models import Order
 
 
 class Shipment(Mybaseclass, models.Model):
     order = models.ForeignKey(
-        Order_details,
+        Order,
         on_delete=models.CASCADE,
     )
     delivery_address = models.CharField(
