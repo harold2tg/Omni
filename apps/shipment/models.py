@@ -22,7 +22,9 @@ class Shipment(Mybaseclass, models.Model):
     city = models.CharField(
         max_length=120
     )
-
+    status = models.BooleanField(
+        default=False
+    )
 
     class Meta:
         db_table = "Shipments"

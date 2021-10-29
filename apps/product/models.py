@@ -5,7 +5,7 @@ from django.db import models
 from ..otherUtilities.models import Mybaseclass
 
 
-class Product(Mybaseclass, models.Model):
+class Products(Mybaseclass, models.Model):
     name = models.CharField(
         max_length=150,
         unique=True

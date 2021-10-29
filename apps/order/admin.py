@@ -1,3 +1,9 @@
+# Django
 from django.contrib import admin
 
-# Register your models here.
+# User
+from ..order.models import Order,Order_items
+
+admin.site.register(Order)
+admin.site.register(Order_items)
+

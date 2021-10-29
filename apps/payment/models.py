@@ -5,7 +5,7 @@ from django.db import models
 from ..otherUtilities.models import Mybaseclass
 
 # Other order
-from ..order.models import Order
+from apps.order.models import Order
 
 
 class Payment(Mybaseclass, models.Model):
@@ -28,5 +28,5 @@ class Payment(Mybaseclass, models.Model):
     class Meta:
         db_table = "Payments"
 
-    def __str__(self):
-        return self.pk
+    # def __str__(self):
+    #     return str(self.orden)

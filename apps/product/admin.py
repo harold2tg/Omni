@@ -1,3 +1,7 @@
+# Django
 from django.contrib import admin
 
-# Register your models here.
+# User
+from apps.product.models import Products
+
+admin.site.register(Products)
